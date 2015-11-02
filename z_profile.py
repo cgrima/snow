@@ -39,7 +39,7 @@ def density_kovacs82(d0, z):
     return dns
 
 
-def density_sorgelaw(d0, z, zp):
+def density_sorgelaw(d0, z, zt):
     """Convert depth into firn density from Sorge's law
     as reported by [Cuffey and Patterson, 2010, eq.2.2]
 
@@ -53,5 +53,5 @@ def density_sorgelaw(d0, z, zp):
         characteristic depth of firn
     """
     di = 917. # Density of ice    
-    return di-(di-d0)*np.exp(-z/zp)
+    return di-(di-d0)*np.exp(-1.9*z/zt)
     
